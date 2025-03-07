@@ -103,3 +103,22 @@ public class MainExample {
 Main method with String[] args
 Overloaded main method: 10
 ```
+- ❌ Example: Not Allowed (Duplicate main method)
+```java
+public class Test {
+    public static void main(String[] args) {
+        System.out.println("Hello, Java!");
+    }
+
+    // ❌ Compilation Error: Duplicate main method
+    public static void main(String[] args) {
+        System.out.println("Another main method");
+    }
+}
+```
+- ⛔ Error: method main(String[]) is already defined in class Test
+
+## 📌 Key Takeaways
+- ✔ Only one **public static void main(String[] args)** method is allowed per class.
+- ✔ Overloading main() (with different parameters) is possible but won't be executed **automatically**.
+- ✔ If **multiple valid** main(String[] args) methods exist, a **compilation error** occurs.
