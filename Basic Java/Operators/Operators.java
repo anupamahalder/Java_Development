@@ -1,4 +1,4 @@
-public class Main{
+public class Operators{
     public static void main(String[] args) {
         // 1️. Arithmetic Operators
         // +, -, *, /, %
