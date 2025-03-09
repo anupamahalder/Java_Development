@@ -83,6 +83,14 @@ System.out.println(result);  // Output: Greater
 ```
 
 ---
+# NOTE:
+## In Java, the bitwise shift operators include:
+
+- 1️⃣ Left Shift (<<) – Shifts bits to the left, filling with 0s.
+- 2️⃣ Right Shift (>>) – Shifts bits to the right, preserving the sign bit (arithmetic shift).
+- 3️⃣ Unsigned Right Shift (>>>) – Shifts bits to the right, filling with 0s (logical shift).
+
+---
 
 ### **🎯 Key Takeaways**
 - ✔ Java has **8 types of operators** for different purposes.  
