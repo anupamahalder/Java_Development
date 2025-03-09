@@ -14,6 +14,8 @@ public class BitwiseOperators{
         int negNum = -8; // Binary: 1111 1000 (in 2's complement)
         System.out.println("negNum >> 1: " + (negNum >> 1));  // -4 (1111 1100)
         System.out.println("negNum >>> 1: " + (negNum >>> 1)); // Large positive value
+        System.out.println(8>>>1); // 4 (For positive number it works just like the normal right shift operator
+
     }
 }
 
