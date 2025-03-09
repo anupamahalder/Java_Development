@@ -88,7 +88,7 @@ System.out.println(result);  // Output: Greater
 
 - 1️⃣ Left Shift (<<) – Shifts bits to the left, filling with 0s.
 - 2️⃣ Right Shift (>>) – Shifts bits to the right, preserving the sign bit (arithmetic shift).
-- 3️⃣ Unsigned Right Shift (>>>) – Shifts bits to the right, filling with 0s (logical shift).
+- 3️⃣ Unsigned Right Shift (>>>) – Shifts bits to the right, filling with 0s (logical shift) (turns negatives into positive numbers by filling with 0s).
 
 ---
 
