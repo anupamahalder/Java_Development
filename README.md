@@ -42,3 +42,8 @@
 🎮 **Game Developer** – Java-based game engines  
 
 ---
+
+# How to run Java Program on Terminal
+- javac Filename.java && java Filename
+
+  
