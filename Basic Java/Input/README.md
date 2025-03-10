@@ -74,6 +74,44 @@ public class BufferedReaderExample {
     }
 }
 ```
+### 🔹 What is IOException?
+- IOException is a checked exception in Java that occurs when an input or output operation fails.
+- It is part of the java.io package and must be handled using a try-catch block or declared using throws.
+  
+### 🔹 Why Does BufferedReader Require IOException Handling?
+BufferedReader.readLine() throws IOException because:
+- It reads data from an external source (keyboard, file, network, etc.).
+- External input sources may be unreliable (e.g., file not found, network failure, etc.).
+- Java forces us to handle this exception to ensure program stability.
+
+### 🔹 How Does catch (IOException e) Work?
+The catch block executes only if an IOException occurs in the try block.
+e.getMessage() provides details about the error.
+Example: Handling IOException
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class IOExceptionExample {
+    public static void main(String[] args) {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        try {
+            System.out.print("Enter your name: ");
+            String name = br.readLine();  // Can throw IOException
+            System.out.println("Hello, " + name);
+        } catch (IOException e) {
+            System.out.println("Error reading input: " + e.getMessage());  // Handle IOException
+        }
+    }
+}
+```
+### 🔹 When Can IOException Occur?
+- Keyboard input fails (rare, but possible).
+- Reading from a file that doesn't exist.
+- Network-related issues while reading input from an online source.
 
 ## 🔹 Key Benefits of Using BufferedReader
 - **Fast & Efficient**: Faster than Scanner as it buffers input and reduces the number of I/O operations.
