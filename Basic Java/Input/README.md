@@ -239,7 +239,61 @@ class DataInputExample {
 - ✔ Handles comma-separated values for array input.
 - ✔ Fast & Efficient, but deprecated in modern Java (use Scanner or BufferedReader instead).
 
-### 📌 **Note**: `DataInputStream` is considered outdated for reading text input. Instead, prefer `Scanner` or `BufferedReader`.
+### **Why `throws IOException` is Required in `DataInputStream` But Not in Other Input Methods?**  
+
+#### **📌 Reason: `IOException` Handling in `DataInputStream`**
+- **`DataInputStream.readLine()` is a method that can throw an `IOException`** if an input or output error occurs.
+- `IOException` (Input/Output Exception) occurs when there is an issue in **reading or writing data**.
+- Since `DataInputStream` works at a **lower level** (reading raw bytes), it requires **explicit exception handling**.
+
+📌 **Example Code with `throws IOException`**  
+```java
+import java.io.DataInputStream;
+import java.io.IOException;
+
+public class Example {
+    public static void main(String[] args) throws IOException { // Required for DataInputStream
+        DataInputStream dis = new DataInputStream(System.in);
+        System.out.print("Enter your name: ");
+        String name = dis.readLine(); // readLine() can throw IOException
+        System.out.println("Hello, " + name);
+        dis.close();
+    }
+}
+```
+
+---
+
+### **🚀 Why Other Input Methods Don't Need `throws IOException`?**
+| Input Method | Requires `throws IOException`? | Why? |
+|-------------|-----------------|------|
+| **Scanner** | ❌ **Not Required** | `Scanner` internally handles exceptions using built-in methods. |
+| **BufferedReader** | ✅ **Required** | `BufferedReader.readLine()` throws `IOException`, just like `DataInputStream.readLine()`. |
+| **Console** | ❌ **Not Required** | `System.console().readLine()` handles exceptions internally. |
+| **Command Line Args** | ❌ **Not Required** | `args[]` are passed as program arguments and do not involve I/O operations. |
+
+📌 **BufferedReader Also Needs `throws IOException`**  
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class BufferedReaderExample {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String input = br.readLine(); // readLine() requires IOException handling
+        System.out.println("You entered: " + input);
+    }
+}
+```
+
+---
+
+### **✅ Conclusion**
+- `DataInputStream.readLine()` and `BufferedReader.readLine()` **throw `IOException`**, so we **must** handle or declare it using `throws IOException`.
+- `Scanner`, `Console`, and `Command Line Arguments` **do not require `throws IOException`** because they handle exceptions internally.
+- **Prefer `Scanner` or `BufferedReader`** instead of `DataInputStream`, as `DataInputStream.readLine()` is **deprecated** in Java 1.1.
+- `DataInputStream` is considered outdated for reading text input. Instead, prefer `Scanner` or `BufferedReader`.
 
 ---
 
