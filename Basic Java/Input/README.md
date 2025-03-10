@@ -193,6 +193,10 @@ java CommandLineInputExample John 28 75000.5 M true Reading,Coding,Traveling sec
 ✅ Used in File Handling & Networking – Useful when dealing with binary data.  
 ❌ Not Recommended for Regular Input Handling – Scanner and BufferedReader are preferred.
 
+### 📌 How DataInputStream Works?
+- DataInputStream reads input as raw bytes.
+- We use readLine() to read string input, then convert it into the required data type.
+
 Here's a Java program using `DataInputStream` to take user input in a class structure:  
 
 ```java
@@ -229,7 +233,13 @@ class DataInputExample {
 3. **`Integer.parseInt()` & `Double.parseDouble()`** → Convert string input to int and double.
 4. **Try-Catch Block** → Handles `IOException`.
 
-📌 **Note**: `DataInputStream` is considered outdated for reading text input. Instead, prefer `Scanner` or `BufferedReader`.
+### ✅ Key Features of DataInputStream
+- ✔ Reads all types of inputs (String, int, double, char, boolean, array).
+- ✔ Uses DataInputStream, which reads bytes and converts them manually.
+- ✔ Handles comma-separated values for array input.
+- ✔ Fast & Efficient, but deprecated in modern Java (use Scanner or BufferedReader instead).
+
+### 📌 **Note**: `DataInputStream` is considered outdated for reading text input. Instead, prefer `Scanner` or `BufferedReader`.
 
 ---
 
