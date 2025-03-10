@@ -173,6 +173,15 @@ public class CommandLineExample {
     }
 }
 ```
+### 📌 Steps to Run this Program
+Compile the program:
+```
+javac CommandLineInputExample.java
+```
+Run the program with inputs:
+```
+java CommandLineInputExample John 28 75000.5 M true Reading,Coding,Traveling secretPassword
+```
 
 ✔ **Advantages**: No need for user interaction.  
 ❌ **Disadvantage**: Limited to String inputs only.
