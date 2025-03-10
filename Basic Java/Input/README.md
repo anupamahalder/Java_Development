@@ -287,14 +287,35 @@ public class BufferedReaderExample {
 }
 ```
 
+### 🔴 Why is DataInputStream.readLine() Deprecated?
+- **No Proper Character Encoding Support**
+  It assumes **default encoding**, which is unreliable for Unicode characters.
+- **Not Memory Efficient**
+  It reads **bytes instead of characters**, which can cause **issues with multibyte character sets**.
+- **Better Alternative Available (BufferedReader)**
+  BufferedReader is faster and supports character encoding properly.
+- Since DataInputStream.readLine() is deprecated, we cannot use it for reading string inputs. Instead, DataInputStream is mainly used to read primitive data types (like int, double, float, char, etc.) in binary format.
+
+- To take all inputs using DataInputStream, we use methods like readInt(), readDouble(), readFloat(), etc. However, System.in does not support direct binary input for these methods, so we need to use an InputStream wrapped in DataInputStream.
+
+### 🚀 How to Take All Inputs Using DataInputStream (Without readLine())
+Although `readLine()` is deprecated, DataInputStream can still be used to read primitive data types using `readInt()`, `readDouble()`, etc.
+
 ---
 
-### **✅ Conclusion**
+### **✅ NOTE**
 - `DataInputStream.readLine()` and `BufferedReader.readLine()` **throw `IOException`**, so we **must** handle or declare it using `throws IOException`.
 - `Scanner`, `Console`, and `Command Line Arguments` **do not require `throws IOException`** because they handle exceptions internally.
 - **Prefer `Scanner` or `BufferedReader`** instead of `DataInputStream`, as `DataInputStream.readLine()` is **deprecated** in Java 1.1.
 - `DataInputStream` is considered outdated for reading text input. Instead, prefer `Scanner` or `BufferedReader`.
 
+### **✅ Conclusion**
+- DataInputStream.readLine() is deprecated; use BufferedReader.readLine() instead.
+- For primitive inputs, Scanner is easier than DataInputStream.
+- For fast input reading, use BufferedReader.
+### 🔹 Final Recommendation:
+- ✔ Use Scanner if you want an easy-to-use input method.
+- ✔ Use BufferedReader if you need efficient input handling for large inputs.
 ---
 
 ## **📌 Summary Table**
