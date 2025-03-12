@@ -83,6 +83,101 @@ These are methods that Java provides in standard libraries (like `Math`, `String
 These are methods created by the programmer. User-defined methods can be further divided into **four types based on parameters and return values** (which we discussed earlier).  
 
 But user-defined methods also have different types based on **behavior and scope**:
+### **🔹 Classification of Methods Based on Return Type and Parameters**
+1️⃣ **Method without Parameters & without Return Type**  
+2️⃣ **Method with Parameters & without Return Type**  
+3️⃣ **Method without Parameters & with Return Type**  
+4️⃣ **Method with Parameters & with Return Type**  
+
+### **1️⃣ Method Without Parameters & Without Return Type**
+- **Definition**: A method that doesn’t take any arguments and doesn’t return a value.  
+- **Example**:
+```java
+public class Greeting {
+    void sayHello() {  // No parameters, no return value
+        System.out.println("Hello! Welcome to Java.");
+    }
+
+    public static void main(String[] args) {
+        Greeting obj = new Greeting();
+        obj.sayHello(); // Calling the method
+    }
+}
+```
+**🔹 Output:**
+```
+Hello! Welcome to Java.
+```
+
+---
+
+### **2️⃣ Method With Parameters & Without Return Type**
+- **Definition**: A method that takes arguments but doesn’t return a value.  
+- **Example**:
+```java
+public class Calculator {
+    void add(int a, int b) {  // Takes two parameters, no return value
+        System.out.println("Sum: " + (a + b));
+    }
+
+    public static void main(String[] args) {
+        Calculator obj = new Calculator();
+        obj.add(5, 10); // Passing arguments
+    }
+}
+```
+**🔹 Output:**
+```
+Sum: 15
+```
+
+---
+
+### **3️⃣ Method Without Parameters & With Return Type**
+- **Definition**: A method that doesn’t take arguments but returns a value.  
+- **Example**:
+```java
+public class MathOperations {
+    int getNumber() {  // No parameters, returns an integer
+        return 10;
+    }
+
+    public static void main(String[] args) {
+        MathOperations obj = new MathOperations();
+        int result = obj.getNumber(); // Storing returned value
+        System.out.println("Returned Number: " + result);
+    }
+}
+```
+**🔹 Output:**
+```
+Returned Number: 10
+```
+
+---
+
+### **4️⃣ Method With Parameters & With Return Type**
+- **Definition**: A method that takes arguments and returns a value.  
+- **Example**:
+```java
+public class Multiplication {
+    int multiply(int a, int b) {  // Takes parameters and returns value
+        return a * b;
+    }
+
+    public static void main(String[] args) {
+        Multiplication obj = new Multiplication();
+        int result = obj.multiply(4, 5);
+        System.out.println("Multiplication: " + result);
+    }
+}
+```
+**🔹 Output:**
+```
+Multiplication: 20
+```
+
+---
 
 ### **🔹 Classification of Methods Based on Behavior**
 #### **(A) Instance Methods**  
