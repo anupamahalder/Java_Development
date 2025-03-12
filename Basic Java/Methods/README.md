@@ -1,5 +1,61 @@
-## **🔹 Methods in Java**
+# **🔹 Methods in Java**
 A **method** in Java is a block of code that performs a specific task and can be reused multiple times. Methods help in reducing redundancy, improving code readability, and making programs modular.
+
+### **🔹 Standard Syntax of a Method**
+```java
+returnType methodName(parameter1, parameter2, ...) {
+    // Method body: Code to perform a task
+    return value;  // (if returnType is not void)
+}
+```
+
+### **🔹 Explanation of Syntax**
+| **Keyword**   | **Description** |
+|--------------|----------------|
+| `returnType` | The type of value the method returns (e.g., `int`, `String`, `void` for no return) |
+| `methodName` | The name of the method (should be meaningful) |
+| `parameters` | Inputs passed to the method (inside parentheses) |
+| `{}`         | The method body where logic is written |
+| `return`     | Returns a value (if return type is not `void`) |
+
+### **🔹 Example 1: Method Without Parameters**
+```java
+public class Example {
+    // Method that prints a message (no parameters, no return value)
+    void greet() {
+        System.out.println("Hello, welcome to Java!");
+    }
+
+    public static void main(String[] args) {
+        Example obj = new Example(); // Creating an object
+        obj.greet(); // Calling the method
+    }
+}
+```
+**🔹 Output:**
+```
+Hello, welcome to Java!
+```
+
+### **🔹 Example 2: Method With Parameters and Return Type**
+```java
+public class Calculator {
+    // Method that takes two numbers and returns their sum
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        int result = calc.add(5, 10); // Calling method with arguments
+        System.out.println("Sum: " + result);
+    }
+}
+```
+**🔹 Output:**
+```
+Sum: 15
+```
 
 ---
 
