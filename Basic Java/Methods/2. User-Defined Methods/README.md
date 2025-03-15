@@ -57,6 +57,7 @@ Apart from return type and parameters, **methods can be categorized based on how
 | **Abstract Method**    | Declared but not implemented in an abstract class. |
 | **Final Method**       | Cannot be overridden in child classes. |
 | **Synchronized Method**| Ensures only one thread executes at a time. |
+| **Constructor Method** | Special method to initialize objects. |
 | **Recursive Method**   | Calls itself for repetitive tasks. |
 | **Getter/Setter**      | Used to access and modify private variables. |
 
