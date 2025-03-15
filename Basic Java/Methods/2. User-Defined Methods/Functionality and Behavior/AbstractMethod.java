@@ -39,7 +39,7 @@ class Bike extends Vehicle {
 }
 
 // Main class
-public class Main {
+public class AbstractMethod {
     public static void main(String[] args) {
         Vehicle myCar = new Car();
         myCar.startEngine(); // Calls Car's startEngine method
