@@ -92,6 +92,147 @@ public class InterfaceExample {
 
 ---
 
+Here's a **brief explanation** of important related topic:
+
+### 🔹 **1. Abstract Methods**
+An **abstract method** is a method that **does not have a body** and must be implemented by subclasses. It is declared inside an **abstract class** and forces child classes to provide their own implementation.
+
+✅ **Example:**
+```java
+abstract class Animal {
+    abstract void makeSound(); // Abstract method (no body)
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+```
+💡 **Key Point:** Abstract methods ensure that every subclass provides its own specific behavior.
+
+---
+
+### 🔹 **2. Concrete Methods**
+A **concrete method** is a normal method with a **complete implementation (body)** inside an abstract or normal class. Subclasses can use it as-is or override it.
+
+✅ **Example:**
+```java
+abstract class Animal {
+    void sleep() {
+        System.out.println("Sleeping...");
+    }
+}
+```
+💡 **Key Point:** Abstract classes can have both **abstract and concrete methods**.
+
+---
+
+### 🔹 **3. Constructors in an Abstract Class**
+An **abstract class can have a constructor**, even though we cannot directly create an object of it. This is useful for initializing common properties for all subclasses.
+
+✅ **Example:**
+```java
+abstract class Vehicle {
+    String brand;
+
+    Vehicle(String brand) {  // Constructor in abstract class
+        this.brand = brand;
+        System.out.println(brand + " vehicle is created.");
+    }
+}
+```
+💡 **Key Point:** Abstract class constructors help initialize **common attributes** before subclass-specific initialization.
+
+---
+
+### 🔹 **4. Instance Variables**
+Instance variables are **attributes** of a class. In abstract classes, they store common properties that **subclasses can inherit**.
+
+✅ **Example:**
+```java
+abstract class Animal {
+    String name;  // Instance variable
+
+    Animal(String name) {
+        this.name = name;
+    }
+}
+```
+💡 **Key Point:** Instance variables in an abstract class help store **shared attributes**.
+
+---
+
+### 🔹 **5. Method Overriding**
+Method overriding occurs when a **subclass provides a new implementation** for a method inherited from a parent class.
+
+✅ **Example:**
+```java
+abstract class Animal {
+    abstract void makeSound();
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Dog barks");  // Overriding the method
+    }
+}
+```
+💡 **Key Point:** Overriding allows subclasses to provide **specific behavior** for a method.
+
+---
+
+### 🔹 **6. Polymorphism**
+Polymorphism means **one interface, many implementations**. A superclass reference can hold objects of different subclasses, allowing **dynamic method binding**.
+
+✅ **Example:**
+```java
+abstract class Animal {
+    abstract void makeSound();
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Animal myPet = new Dog(); // Polymorphism
+        myPet.makeSound(); // Dog barks
+
+        myPet = new Cat();
+        myPet.makeSound(); // Cat meows
+    }
+}
+```
+💡 **Key Point:** Polymorphism enables **flexibility** and **dynamic behavior** at runtime.
+
+---
+
+## **🚀 Summary**
+| Concept | Definition | Example |
+|---------|------------|------------|
+| **Abstract Method** | A method without a body, must be implemented in subclasses. | `abstract void makeSound();` |
+| **Concrete Method** | A method with an implementation inside an abstract or normal class. | `void sleep() { System.out.println("Sleeping..."); }` |
+| **Abstract Class Constructor** | A constructor inside an abstract class to initialize variables. | `Vehicle(String brand) { this.brand = brand; }` |
+| **Instance Variables** | Variables declared inside a class to store data. | `String name;` |
+| **Method Overriding** | A subclass providing a new implementation of a superclass method. | `@Override void makeSound() { System.out.println("Dog barks"); }` |
+| **Polymorphism** | A single superclass reference can hold objects of different subclasses. | `Animal myPet = new Dog();` |
+
+---
+
 ## **📌 Summary**
 🔹 **Abstraction** hides unnecessary details and shows only essential features.  
 🔹 **Abstract classes** allow both **abstract** and **concrete methods** (0-100% abstraction).  
