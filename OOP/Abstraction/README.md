@@ -232,6 +232,68 @@ public class Test {
 | **Polymorphism** | A single superclass reference can hold objects of different subclasses. | `Animal myPet = new Dog();` |
 
 ---
+## 🚀An **interface is not a class** in Java.  
+
+### **Key Differences Between an Interface and a Class**
+| Feature            | **Interface** | **Class** |
+|--------------------|-------------|-----------|
+| **Type**          | Not a class; it’s a blueprint for classes | A concrete entity that can have objects |
+| **Methods**       | Only abstract methods (before Java 8), but can have default/static methods (since Java 8) | Can have concrete (implemented) methods |
+| **Implementation**| Implemented by a class using `implements` | Extended by another class using `extends` |
+| **Object Creation**| Cannot create objects | Can create objects (unless it's abstract) |
+| **Multiple Inheritance**| Supports multiple inheritance | Supports single inheritance only |
+
+---
+
+### **Example: Interface vs. Class**
+#### **Interface Example**
+```java
+interface Vehicle {
+    void start(); // Abstract method (no body)
+}
+
+class Car implements Vehicle { // Implementing the interface
+    public void start() {
+        System.out.println("Car is starting...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle myCar = new Car(); // Interface reference holding an object
+        myCar.start();
+    }
+}
+```
+
+#### **Class Example**
+```java
+class Animal {
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myPet = new Dog(); // Class reference
+        myPet.makeSound();
+    }
+}
+```
+
+### **Conclusion**
+- **Interface**: Defines a **contract** for classes, without storing implementation details.  
+- **Class**: Defines an **actual blueprint** for objects, containing implementation logic.  
+
+
+---
 
 ## **📌 Summary**
 🔹 **Abstraction** hides unnecessary details and shows only essential features.  
