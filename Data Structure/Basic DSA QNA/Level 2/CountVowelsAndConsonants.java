@@ -3,9 +3,7 @@
 import java.util.Scanner;
 
 public class CountVowelsAndConsonants{
-    private boolean checkVowel(char ch){
-        return false;
-    }
+    
     public static void main(String[] args){
        Scanner sc = new Scanner(System.in);
 
