@@ -2,10 +2,8 @@
 
 import java.util.Scanner;
 
-public class RemoveDuplicate{
-    private boolean checkVowel(char ch){
-        return false;
-    }
+public class RemoveDuplicateCharacters{
+   
     public static void main(String[] args){
        Scanner sc = new Scanner(System.in);
 
