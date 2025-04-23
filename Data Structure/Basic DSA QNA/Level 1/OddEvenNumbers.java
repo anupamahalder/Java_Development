@@ -1,5 +1,5 @@
 // Print Even and Odd Numbers between 1 to 100.
-public class MainClass{
+public class OddEvenNumbers{
     public static void main(String[] args){
         System.out.print("Odd number: ");
         for(int i=1; i<100;i+=2){
