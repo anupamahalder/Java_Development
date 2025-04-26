@@ -187,7 +187,7 @@ public class MainClass{
 
 ---
 
-## ✅ **Interface Example: `ATMService`**
+### ✅ **Interface Example: `ATMService`**
 
 ```java
 interface ATMService {
@@ -322,5 +322,96 @@ Depositing 10000.0 into HDFC account.
 ### Benefits:
 - **Flexibility**: Both the abstract class and the concrete class can implement the interface, offering flexibility in code structure.
 - **Reusability**: Code from `AbstractBank` can be reused in the `SBI` class while still requiring concrete implementation for specific behaviors.
+- 
 ---
+## 3. Inheritance:
 
+**Inheritance** is a fundamental concept in Object-Oriented Programming (OOP) that allows a class (called a subclass or derived class) to inherit properties and behaviors (fields and methods) from another class (called a superclass or base class). Inheritance promotes code reusability and establishes a relationship between the base and derived classes.
+
+### Types of Inheritance:
+
+1. **Single Inheritance:**
+   - A subclass inherits from only one superclass.
+   - Example: `class Dog extends Animal { }`
+
+2. **Multilevel Inheritance:**
+   - A subclass is derived from another subclass, forming a chain of inheritance.
+   - Example: `class Animal { }`, `class Mammal extends Animal { }`, `class Dog extends Mammal { }`
+
+3. **Hierarchical Inheritance:**
+   - Multiple subclasses inherit from a single superclass.
+   - Example: `class Animal { }`, `class Dog extends Animal { }`, `class Cat extends Animal { }`
+
+4. **Multiple Inheritance (Not allowed in Java):**
+   - A subclass inherits from multiple superclasses. Java does not support this directly, but we can simulate it using interfaces.
+   - Example (simulated in Java using interfaces):
+     ```java
+     interface Animal { }
+     interface Pet { }
+     class Dog implements Animal, Pet { }
+     ```
+
+5. **Hybrid Inheritance (Not allowed in Java):**
+   - A combination of multiple types of inheritance (e.g., a subclass that inherits from multiple classes and also participates in multilevel inheritance).
+   - This is not allowed in Java directly to avoid complexity and ambiguity (like the "Diamond Problem").
+
+### Benefits of Inheritance:
+- **Code Reusability**: The child class can reuse the methods and properties of the parent class.
+- **Method Overriding**: The child class can provide its own specific implementation of a method inherited from the parent class.
+- **Establishes Relationship**: It creates a natural hierarchy between the classes.
+
+### Example of Inheritance:
+```java
+// Parent Class
+class Language {
+    private String name;
+
+    // Constructor 
+    Language(){
+        this.name = "Programming language"; // Initalizing if not initalized
+    }
+
+    // Setter method
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setAdditionalName(String name){
+        this.name = this.name + ": " + name;
+    }
+
+    // Getter method
+    public void getName() {
+        System.out.println("Language name: " + name);
+    }
+}
+
+// Child Class 1 - Overrides setName
+class CPP extends Language {
+    @Override
+    public void setName(String name) {
+        super.setName("C++: " + name); // Prefixes "C++" to the name
+    }
+}
+
+// Child Class 2 - Inherits without overriding
+class Java extends Language {
+    // Inherits everything as is
+}
+
+// Main class
+public class MainClass {
+    public static void main(String[] args) {
+
+        CPP cpp = new CPP();
+        cpp.setName("Object-Oriented");
+        cpp.getName(); // Output: Language name: C++: Object-Oriented
+
+        Java java = new Java();
+        java.setName("Java");
+        java.setAdditionalName("Platform Independent");
+        java.getName(); // Output: Language name: Java: Platform Independent
+    }
+}
+```
+
+---
