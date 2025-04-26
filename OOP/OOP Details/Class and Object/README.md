@@ -147,34 +147,35 @@ public class Main {
 ### ✅ **Abstract Class Example: `Bank`**
 
 ```java
-abstract class Bank {
+public abstract class Bank{
     abstract double getInterestRate(); // Abstract method
 
-    void bankInfo() {
-        System.out.println("This is a generic bank.");
+    public void bankInfo(){
+        System.out.println("This is a generic bank");
     }
 }
 
-class SBI extends Bank {
-    double getInterestRate() {
+public class HDFC extends Bank{
+    public double getInterestRate(){
         return 6.5;
     }
 }
 
-class HDFC extends Bank {
-    double getInterestRate() {
-        return 7.2;
+public class SBI extends Bank{
+    public double getInterestRate(){
+        return 7;
     }
 }
 
-public class TestBank {
+public class MainClass{
     public static void main(String[] args) {
-        Bank b1 = new SBI();
-        Bank b2 = new HDFC();
+        // ➡️ Even though both are Bank references, the method behaves differently based on the actual object (SBI, HDFC) — that’s runtime polymorphism!
+        Bank b1 = new HDFC();
+        Bank b2 = new SBI();
 
         b1.bankInfo();
-        System.out.println("SBI Interest Rate: " + b1.getInterestRate() + "%");
-        System.out.println("HDFC Interest Rate: " + b2.getInterestRate() + "%");
+        System.out.println(b1.getInterestRate()); // 6.5
+        System.out.println(b2.getInterestRate()); // 7
     }
 }
 ```
