@@ -169,7 +169,8 @@ public class SBI extends Bank{
 
 public class MainClass{
     public static void main(String[] args) {
-        // ➡️ Even though both are Bank references, the method behaves differently based on the actual object (SBI, HDFC) — that’s runtime polymorphism!
+        // ➡️ Even though both are Bank references, the method behaves differently based on the
+        // actual object (SBI, HDFC) — that’s runtime polymorphism!
         Bank b1 = new HDFC();
         Bank b2 = new SBI();
 
@@ -226,8 +227,100 @@ public class TestATM {
 - `SBIATM` implements the interface and provides actual behavior for `withdraw()` and `checkBalance()`.
 
 ---
+### Example:
+Demonstrating how both a normal class and an abstract class can implement an interface in a single program.
+```java
+// Defining the interface
+public interface Bank {
+    // Abstract method to be implemented by any class that implements this interface
+    public void openAccount();
 
+    // Another abstract method to be implemented
+    public void depositMoney(double amount);
+}
 
+// Abstract class implementing the Bank interface
+public abstract class AbstractBank implements Bank {
 
+    // Concrete method in the abstract class
+    public void openAccount() {
+        System.out.println("Opening an account in the abstract bank.");
+    }
 
+    // Abstract method can be partially implemented or left as abstract to be implemented by subclasses
+    public abstract void depositMoney(double amount);
+}
+
+// Concrete class that extends the AbstractBank and implements the interface method
+public class SBI extends AbstractBank {
+
+    // Implementing the abstract method from the interface
+    public void depositMoney(double amount) {
+        System.out.println("Depositing " + amount + " into SBI account.");
+    }
+
+    // Optional: We can override openAccount() if needed, but we already inherited it from AbstractBank
+    @Override
+    public void openAccount() {
+        System.out.println("Opening an SBI account.");
+    }
+}
+
+// Another concrete class implementing the interface directly
+class HDFC implements Bank {
+
+    // Implementing the interface methods
+    public void openAccount() {
+        System.out.println("Opening an HDFC account.");
+    }
+
+    public void depositMoney(double amount) {
+        System.out.println("Depositing " + amount + " into HDFC account.");
+    }
+}
+
+public class MainClass {
+    public static void main(String[] args) {
+
+        // Creating an object of SBI (concrete class extending abstract class)
+        Bank sbi = new SBI();
+        sbi.openAccount();
+        sbi.depositMoney(5000.0);
+
+        // Creating an object of HDFC (directly implementing the interface)
+        Bank hdfc = new HDFC();
+        hdfc.openAccount();
+        hdfc.depositMoney(10000.0);
+    }
+}
+```
+
+### Output:
+```
+Opening an SBI account.
+Depositing 5000.0 into SBI account.
+Opening an HDFC account.
+Depositing 10000.0 into HDFC account.
+```
+
+### Explanation:
+
+1. **Interface `Bank`:**  
+   - Defines abstract methods `openAccount()` and `depositMoney(double amount)`.
+   - These methods must be implemented by any class that implements the `Bank` interface.
+
+2. **Abstract Class `AbstractBank`:**  
+   - Implements the `Bank` interface partially, meaning it provides a concrete implementation of `openAccount()` but leaves the `depositMoney(double amount)` method abstract (to be implemented by subclasses).
+   
+3. **Concrete Class `SBI`:**  
+   - Extends the abstract class `AbstractBank` and provides the implementation for the `depositMoney(double amount)` method.
+   - It inherits the `openAccount()` method from `AbstractBank` but can override it if needed.
+
+4. **Concrete Class `HDFC`:**  
+   - Directly implements the `Bank` interface and provides concrete implementations for both `openAccount()` and `depositMoney(double amount)` methods.
+
+### Benefits:
+- **Flexibility**: Both the abstract class and the concrete class can implement the interface, offering flexibility in code structure.
+- **Reusability**: Code from `AbstractBank` can be reused in the `SBI` class while still requiring concrete implementation for specific behaviors.
+---
 
