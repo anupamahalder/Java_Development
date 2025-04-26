@@ -415,3 +415,71 @@ public class MainClass {
 ```
 
 ---
+Sure! Here's a **short and clear** explanation of **Polymorphism** in Java:
+
+---
+
+## 4. Polymorphism 
+Polymorphism (Poly = many, Morph = forms) allows **one action** to behave **differently** based on the object that is performing it.
+
+Polymorphism means the ability of an object to take many forms.
+It allows the same method name to behave differently based on the object calling it.
+
+---
+
+### 🔹 **Types of Polymorphism** in Java:
+
+1. **Compile-time Polymorphism** (Method Overloading):
+   - Same method name with **different parameters** in the same class.
+   - Resolved during **compilation**.
+  
+   ```java
+   class Add {
+       int sum(int a, int b) { return a + b; }
+       int sum(int a, int b, int c) { return a + b + c; }
+   }
+   ```
+
+2. **Runtime Polymorphism** (Method Overriding):
+   - A **subclass overrides** a method from its parent class.
+   - Resolved at **runtime** using dynamic method dispatch.
+   
+   ```java
+   class Animal {
+       void sound() { System.out.println("Animal makes sound"); }
+   }
+
+   class Dog extends Animal {
+       void sound() { System.out.println("Dog barks"); }
+   }
+   ```
+#### ✅ Benefit:
+- **Code flexibility and reusability**
+- Supports **interface and inheritance** concepts
+
+#### 🔁 Dynamic Method Dispatch:
+It is the process in which a call to an overridden method is resolved at runtime, not at compile time.
+This enables runtime polymorphism in Java.
+```java
+class Animal {
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a = new Dog();  // Reference is of parent, object is of child
+        a.sound();             // Output: Dog barks (Resolved at runtime)
+    }
+}
+```
+---
+
+
