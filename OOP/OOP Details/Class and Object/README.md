@@ -25,7 +25,7 @@ class MyClass{
 
 ## Pillar of OOP:
 ### 1. Encapsulation:
-Wrapping up data in a single unit. Used for security purposes.
+Wrapping up data in a single unit. Used for security purposes. It is called data hiding 
 
 ```java
 class Employee{
@@ -37,11 +37,10 @@ class Employee{
   
     // default constructor 
     Employee(){
-        empID = 109;
-        name = "Newton";
-        phoneNumber = 12454;
-        basicSalary = 22000;
+        // this keyword to call another constructor (parameterized)
+        this(120, "Unknown", 2284918, 22000);
     }
+
     // Constructor 
     Employee(int empID, String name, int phoneNumber, double basicSalary){
         this.empID = empID;
@@ -85,7 +84,7 @@ class Employee{
     }
   }
 ```
-### NOTE:
+#### NOTE:
 ```java
 private Employee{
   // Constructor
@@ -93,7 +92,11 @@ private Employee{
 ```
 We will create private constructor of a class to not give access to create an object. Mostly for security access.
 
-
+### 2. Abstraction:
+- Abstraction is a process in which we hide the background implementation details. It provides only essential details. It is called implementation hiding.
+- To implement abstraction we have
+1. abstract keyword
+2. interface (blueprint)
 
 
 
