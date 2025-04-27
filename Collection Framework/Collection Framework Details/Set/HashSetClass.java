@@ -3,7 +3,7 @@ import java.util.Set;
 
 public class HashSetClass{
     public static void main(String[] args) {
-        // Creating object of List interface
+        // Creating object of Set interface
         Set<Integer> set = new HashSet<>();
 
         // Add elements to set
