@@ -22,6 +22,9 @@ public class HashSetClass{
         set.remove(4); // Direct element have to give here
         System.out.println(set); // [3, 7, 8]
 
+        // check element is present or not 
+        System.out.println(set.contains(9)); // false
+
         // remove all elements
         set.clear();
         System.out.println(set); // []
