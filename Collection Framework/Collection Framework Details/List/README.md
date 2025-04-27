@@ -152,4 +152,12 @@ System.out.println(stack.pop()); // Anu
 
 ---
 
+### ✅ When to Use What?
+#### **Use ArrayList when:**
+- You don't need thread safety.
+- You're working in a single-threaded application.
+
+#### **Use Vector when:**
+- You need built-in thread safety (but it's rare today — better to use Collections.synchronizedList() or CopyOnWriteArrayList for concurrent access).
+
 
