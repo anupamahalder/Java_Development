@@ -6,7 +6,7 @@ import java.util.Vector;
 public class VectorClass{
     public static void main(String[] args) {
         // Creating object of List interface
-        List<Double> vector = new Vector<>();
+        Vector<Double> vector = new Vector<>();
 
         // Add elements to vector 
         vector.add(122.5);
