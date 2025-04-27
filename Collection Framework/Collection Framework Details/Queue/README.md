@@ -95,3 +95,72 @@ System.out.println(adq.peek()); // Java
 | `ArrayDeque`   | ✅ Yes    | ❌ No   | ❌ No          | ❌ No         |
 
 ---
+
+### 🔁 **1. What is `Deque`?**
+
+- `Deque` stands for **Double-Ended Queue**.
+- It’s an **interface** in the `java.util` package.
+- Allows **insertion and deletion** of elements **from both ends** (front and rear).
+- It extends the `Queue` interface.
+
+```java
+Deque<String> deque;
+```
+
+---
+
+### 📦 **2. What is `ArrayDeque`?**
+
+- `ArrayDeque` is a **class** that implements the `Deque` interface.
+- It uses a **resizable array** to store elements.
+- It is **faster than `LinkedList`** and has **no capacity limits**.
+- **Does not allow `null` elements.**
+
+```java
+Deque<String> deque = new ArrayDeque<>();
+```
+
+---
+
+### ✅ **Basic Example**
+
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Deque<String> deque = new ArrayDeque<>();
+
+        deque.addFirst("Java");
+        deque.addLast("Python");
+        deque.add("C++"); // same as addLast
+
+        System.out.println(deque); // [Java, Python, C++]
+
+        System.out.println("Removed: " + deque.removeFirst()); // Java
+        System.out.println("Removed: " + deque.removeLast());  // C++
+    }
+}
+```
+
+---
+
+### 📊 **Comparison Table**
+
+| Feature             | `Deque` (Interface)      | `ArrayDeque` (Class)               |
+|---------------------|---------------------------|-------------------------------------|
+| Type                | Interface                 | Concrete class                     |
+| Can instantiate?    | ❌ No                     | ✅ Yes                              |
+| Implements          | —                         | `Deque`, `Queue`                   |
+| Allows null         | —                         | ❌ No                              |
+| Thread-safe         | —                         | ❌ No                              |
+| Backed by           | —                         | Array                              |
+| Performance         | —                         | Faster than `LinkedList`           |
+
+---
+
+### ✅ **Conclusion**
+
+- Use `Deque` when you want **flexibility** with **implementations** (`LinkedList`, `ArrayDeque`).
+- Use `ArrayDeque` when you need a **high-performance, non-thread-safe deque**.
+---
