@@ -3,7 +3,7 @@ import java.util.Set;
 
 public class LinkedHashSetClass{
     public static void main(String[] args) {
-        // Creating object of List interface
+        // Creating object of Set interface
         LinkedHashSet<Integer> lhs = new LinkedHashSet<>();
 
         // Add elements
